@@ -16,5 +16,6 @@ const styles = StyleSheet.create({
     backgroundColor: '#4E4187',
     alignItems: 'center',
     justifyContent: 'center',
+    paddingTop: 55
   },
 });
