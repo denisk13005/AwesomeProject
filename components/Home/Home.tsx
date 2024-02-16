@@ -1,9 +1,11 @@
 import React from 'react';
 
-import { Image, ScrollView, StyleSheet, Text, View } from 'react-native';
+import { Button, Image, SafeAreaView, ScrollView, StyleSheet, Text, View } from 'react-native';
 const homeImage = require('../../assets/homeImage.gif')
 
-export default function Home() {
+export default function Home({navigation}) {
+  const [text, onChangeText] = React.useState('Useless Text');
+  const [number, onChangeNumber] = React.useState('');
   return (
     <ScrollView style={styles.container}>
       <Text style={styles.title}>Une 📷 Vaut Mieux Qu'une 🚔</Text>
@@ -13,12 +15,25 @@ export default function Home() {
       </View>
       <Text style={styles.title}>Prendre une photo d'un horodateur hors service peut vous éviter une amande</Text>
 
-
+      <SafeAreaView>
+      <Button
+      title="Go to Jane's profile"
+      onPress={() =>
+        navigation.navigate('Test', {name: 'Test'})
+      }
+    />
+    </SafeAreaView>
     </ScrollView>
   )
 }
 
 const styles = StyleSheet.create({
+  input: {
+    height: 40,
+    margin: 12,
+    borderWidth: 1,
+    padding: 10,
+  },
   container: {
     flex: 1,
     width: '100%', 
